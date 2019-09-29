@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.text.Font?>
+<HBox xmlns="http://javafx.com/javafx/null"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controller05.Controller05ImageProcessing">
+
+	<VBox spacing="15">
+		<padding>
+			<Insets bottom="10" left="10" right="10" top="10" />
+		</padding>
+
+		<HBox>
+			<Button onAction="#handlePrev" text="戻る" />
+			<Pane HBox.hgrow="ALWAYS"></Pane>
+		</HBox>
+
+		<VBox style="-fx-border-style:dashed;-fx-border-color:gray">
+			<padding>
+				<Insets top="10" left="10" bottom="10" right="10" />
+			</padding>
+			<HBox alignment="CENTER_LEFT">
+				<Label text="マークシート読込"
+					style="-fx-font-size:20;-fx-font-weight:bold;"></Label>
+				<Pane prefWidth="50"></Pane>
+				<Label text=" ◆画像ファイル解析" style="-fx-font-size:17;-fx-font-weight:bold;"></Label>
+			</HBox>
+			<Label text="　～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～"></Label>
+			<Label text=" １．「開く」からファイル画像ファイルを選択する。" wrapText="true"></Label>
+			<Label text=" ２．「画像処理」で画像の解析を実行する" wrapText="true"></Label>
+			<Label text=" ３．以前保存したファイルがあれば選択し開くボタンを押す。" wrapText="true"></Label>
+			<Label text="※ファイル名、フォルダ名に日本語だと画像の読込ができません。" textFill="RED">
+				<font>
+					<Font size="18"></Font>
+				</font>
+			</Label>
+			<Label text="　～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～"></Label>
+		</VBox>
+
+		<VBox style="-fx-border-style:dashed;-fx-border-color:gray"
+			VBox.vgrow="ALWAYS">
+			<padding>
+				<Insets top="10" left="10" bottom="10" right="10" />
+			</padding>
+			<HBox alignment="CENTER_LEFT" spacing="10">
+				<padding>
+					<Insets bottom="10" />
+				</padding>
+				<Button onAction="#handleOpenButton" text="開く" />
+				<Button onAction="#handleDeleteButton" text="削除" />
+				<Button onAction="#handleImageProcessingButton" text="画像処理" />
+				<Pane HBox.hgrow="ALWAYS" />
+				<Label fx:id="labelFileCount" text="ファイル数：0" />
+			</HBox>
+			<ListView fx:id="listViewImageFiles" prefWidth="500"
+				VBox.vgrow="ALWAYS" />
+		</VBox>
+
+
+
+
+	</VBox>
+
+	<ImageView fx:id="imageViewOpendFiles" />
+
+</HBox>

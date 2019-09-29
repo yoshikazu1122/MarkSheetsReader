@@ -1,0 +1,73 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+.tableCellClass {
+    -fx-background-color: transparent;
+    -fx-border-color:gray;
+    -fx-alignment:center ;
+    -fx-font-size:18;
+}
+.tableCellClass:empty {
+    -fx-background-color: transparent;
+    -fx-border-color:transparent;
+    -fx-alignment:center ;
+    -fx-font-size:18;
+}
+
+.tableCellClass:focused{
+    -fx-background-color: gray;
+    -fx-text-fill:white ;
+    
+}
+
+.tableCellClass:selected{
+    -fx-background-color: gray;
+    -fx-text-fill:black ;
+    -fx-padding: 0; 
+    
+}
+
+.tableCellClass2 {
+    -fx-background-color: green;
+    -fx-border-color:pink;
+    -fx-alignment:center ;
+    -fx-font-size:18;
+}
+.tableCellClassRight {
+    -fx-background-color: lightgray;
+    -fx-border-color:#ffff80;
+    -fx-alignment:center ;
+    -fx-font-size:18;
+}
+
+.text-field-table-cell .text-field {
+   -fx-padding: 0; 
+   -fx-border-color:black; 
+   -fx-background-color:white;
+   -fx-alignment:center ;
+}
+
+.table-view .scroll-bar * {
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+
+
+.table-row-cell:selected .table-cell {
+	-fx-border-color: blue gray blue gray;
+    -fx-text-fill:black ;
+    -fx-border-width:2 1 2 1;
+    -fx-background-color:white;
+}
+.table-row-cell:focus .table-cell {
+	-fx-border-color: blue gray blue gray;
+    -fx-text-fill:black ;
+    -fx-border-width:2 1 2 1;
+    -fx-background-color:white;
+}

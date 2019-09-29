@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<GridPane alignment="TOP_CENTER" hgap="5" vgap="10"
+	xmlns="http://javafx.com/javafx/null"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controller01.Controller01QuestionSetting">
+	<padding>
+		<Insets top="10" left="10" right="10" bottom="10"></Insets>
+	</padding>
+
+	<columnConstraints>
+		<ColumnConstraints percentWidth="17" />
+		<ColumnConstraints percentWidth="83" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints percentHeight="4" />
+		<RowConstraints percentHeight="56" />
+		<RowConstraints percentHeight="40" />
+	</rowConstraints>
+
+	<HBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+		<Pane HBox.hgrow="ALWAYS">
+		</Pane>
+		<Button fx:id="nextButtonForChooseOption"
+			maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+			onAction="#handleNext" text="進む" />
+	</HBox>
+
+	<VBox GridPane.rowIndex="1" GridPane.columnIndex="0" spacing="15"
+		style="-fx-border-color:gray;-fx-border-style:dashed;">
+		<padding>
+			<Insets top="10" left="5" bottom="10" right="5"></Insets>
+		</padding>
+
+		<VBox>
+			<Label text="マークシート設定①"
+				style="-fx-font-size:20;-fx-font-weight:bold;"></Label>
+			<Label text=" ◆問題番号設定" style="-fx-font-size:17;-fx-font-weight:bold;"></Label>
+			<Label text="　～～～～～～～～～～"></Label>
+			<Label text=" １．原稿貼付からマークシートの原稿をセット。" wrapText="true"></Label>
+			<Label text=" ２．右マークエリアで問題番号を左クリックで選択、右クリック取消。ドラッグ可。"
+				wrapText="true"></Label>
+			<Label text=" ３．以前保存したファイルがあれば選択し開くボタンを押す。" wrapText="true"></Label>
+			<Label text="　～～～～～～～～～～"></Label>
+		</VBox>
+
+		<HBox alignment="CENTER_LEFT" spacing="10">
+			<VBox>
+				<Label text="問題番号" />
+				<Label text="増減SキーDキー" style="-fx-font-size:12;" />
+			</VBox>
+			<Spinner fx:id="spinnerForQuestionNumber" editable="true"
+				min="1" max="300" initialValue="1" prefWidth="80" />
+		</HBox>
+
+		<HBox alignment="CENTER_LEFT" spacing="10">
+			<Button text="原稿貼付"
+				onAction="#handleSettingBackgroundImageButton" />
+			<Button text="リセット" onAction="#handleSettingResetButton"></Button>
+		</HBox>
+	</VBox>
+
+	<VBox GridPane.rowIndex="2" GridPane.columnIndex="0" spacing="10"
+		style="-fx-border-color:gray;-fx-border-style:dashed;">
+		<padding>
+			<Insets top="5" right="5" left="5" bottom="5" />
+		</padding>
+		<HBox alignment="CENTER_LEFT" spacing="10">
+			<Label text="保存ファイル"></Label>
+			<Button text="開く" onAction="#handleFileOpenButton"></Button>
+			<Button text="削除" onAction="#handleSavedFilesDeleteButton"></Button>
+		</HBox>
+		<ListView fx:id="listViewForSavedFiles" prefHeight="300">
+		</ListView>
+	</VBox>
+
+	<ScrollPane GridPane.rowIndex="0" GridPane.columnIndex="1"
+		GridPane.rowSpan="3">
+		<AnchorPane fx:id="anchorPane" GridPane.hgrow="ALWAYS"
+			GridPane.vgrow="ALWAYS">
+			<ImageView fx:id="imageViewSettingBackgroundImage" />
+			<Circle radius="8" fill="BLACK" AnchorPane.topAnchor="18"
+				AnchorPane.leftAnchor="17" />
+			<Circle radius="8" fill="BLACK" AnchorPane.topAnchor="18"
+				AnchorPane.leftAnchor="925" />
+			<Circle radius="8" fill="BLACK" AnchorPane.topAnchor="1648"
+				AnchorPane.leftAnchor="925" />
+			<Circle radius="8" fill="BLACK" AnchorPane.topAnchor="1648"
+				AnchorPane.leftAnchor="17" />
+		</AnchorPane>
+	</ScrollPane>
+
+
+
+</GridPane>

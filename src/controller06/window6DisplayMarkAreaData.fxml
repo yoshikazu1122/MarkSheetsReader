@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<GridPane alignment="center" hgap="10" vgap="10"
+	xmlns="http://javafx.com/javafx/null"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controller06.Controller06DisplayMarkAreaData">
+	<padding>
+		<Insets top="10" left="10" right="10" bottom="10" />
+	</padding>
+
+	<columnConstraints>
+		<ColumnConstraints percentWidth="17" />
+		<ColumnConstraints percentWidth="13" />
+		<ColumnConstraints percentWidth="70" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints percentHeight="4" />
+		<RowConstraints percentHeight="5" />
+		<RowConstraints percentHeight="91" />
+	</rowConstraints>
+
+	<HBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+		<Button onAction="#handlePrev" text="戻る" />
+		<Pane HBox.hgrow="ALWAYS"></Pane>
+		<Button onAction="#handleNext" text="進む" />
+	</HBox>
+
+	<VBox spacing="15" GridPane.rowIndex="0" GridPane.columnIndex="2"
+		GridPane.rowSpan="2" alignment="CENTER_LEFT">
+
+		<padding>
+			<Insets top="5" left="10" bottom="5" right="180"></Insets>
+		</padding>
+		<VBox style="-fx-border-color:gray;-fx-border-style:dashed;">
+		<padding>
+			<Insets top="5" left="30" bottom="10" right="10"></Insets>
+		</padding>
+			<HBox alignment="CENTER_LEFT">
+				<Label text="マークシート結果"
+					style="-fx-font-size:20;-fx-font-weight:bold;-fx-font-weight:bold;"></Label>
+				<Label text=" ◆各マークの濃度一覧" style="-fx-font-size:17;"></Label>
+			</HBox>
+			<Label text=" マークされた色の濃さを表した数値（０～１００）" wrapText="true"></Label>
+			<Label text=" 読取値を小さくすれば薄いマークを拾えるが、ゴミ等の跡を読み取る" wrapText="true"></Label>
+		</VBox>
+
+	</VBox>
+
+	<VBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="0"
+		GridPane.columnSpan="2">
+		<HBox alignment="CENTER" spacing="20">
+			<HBox spacing="5" alignment="CENTER">
+				<padding>
+					<Insets top="10"></Insets>
+				</padding>
+				<Label fx:id="labelForSlider" prefWidth="80">
+					<font>
+						<Font size="16"></Font>
+					</font>
+				</Label>
+				<Slider fx:id="sliderForThreshold" min="0" max="100"
+					value="20"></Slider>
+			</HBox>
+		</HBox>
+	</VBox>
+
+	<VBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="0"
+		GridPane.columnSpan="3">
+		<AnchorPane VBox.vgrow="ALWAYS">
+			<TextArea fx:id="textArea" wrapText="false"
+				AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+				AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0"></TextArea>
+			<ImageView fx:id="imagePlus" AnchorPane.rightAnchor="20"
+				AnchorPane.topAnchor="7" />
+			<ImageView fx:id="imageMinus" AnchorPane.rightAnchor="20"
+				AnchorPane.topAnchor="40" />
+		</AnchorPane>
+	</VBox>
+
+</GridPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<GridPane alignment="center" hgap="10" vgap="10"
+	xmlns="http://javafx.com/javafx/null"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controller07.Controller07ScoreResult">
+	<padding>
+		<Insets bottom="10" left="10" right="10" top="10" />
+	</padding>
+
+	<columnConstraints>
+		<ColumnConstraints percentWidth="17" />
+		<ColumnConstraints percentWidth="13" />
+		<ColumnConstraints percentWidth="70" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints percentHeight="4" />
+		<RowConstraints percentHeight="5" />
+		<RowConstraints percentHeight="91" />
+	</rowConstraints>
+
+	<HBox GridPane.columnIndex="0" GridPane.rowIndex="0">
+		<Button onAction="#handlePrev" text="戻る" />
+		<Pane HBox.hgrow="ALWAYS" />
+		<Button onAction="#handleNext" text="進む" />
+	</HBox>
+
+	<VBox alignment="CENTER_LEFT" spacing="15"
+		GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="2">
+		<padding>
+			<Insets bottom="10" left="10" right="180" top="10" />
+		</padding>
+		<VBox style="-fx-border-color:gray;-fx-border-style:dashed;">
+			<padding>
+				<Insets bottom="10" left="30" right="10" top="5" />
+			</padding>
+			<HBox alignment="CENTER_LEFT">
+				<Label style="-fx-font-size:20;-fx-font-weight:bold;"
+					text="マークシート結果" />
+				<Label style="-fx-font-size:17;-fx-font-weight:bold;"
+					text=" ◆各マークシートの問題正誤表と得点" />
+			</HBox>
+			<Label text=" マークされていないものは ’ / ’ となる" wrapText="true"></Label>
+			<Label text=" ★星は順不同問題の印" wrapText="true"></Label>
+		</VBox>
+	</VBox>
+
+	<VBox spacing="10" GridPane.columnIndex="0"
+		GridPane.columnSpan="2" GridPane.rowIndex="1">
+		<!-- ここにあとから追加したいボタン等を追加する -->
+	</VBox>
+
+	<VBox GridPane.columnIndex="0" GridPane.columnSpan="3"
+		GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+		<ScrollPane VBox.vgrow="ALWAYS">
+			<content>
+				<AnchorPane fx:id="anchorPane">
+					<VBox fx:id="vbox" AnchorPane.topAnchor="0"
+						AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+						AnchorPane.bottomAnchor="0">
+					</VBox>
+				</AnchorPane>
+			</content>
+		</ScrollPane>
+	</VBox>
+
+</GridPane>
